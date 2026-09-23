@@ -173,6 +173,79 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)) !important;
 }
 
+/* ==========================================================================
+   SELECTOR DE IDIOMA (LANGUAGE SWITCHER: ES | EN | PT)
+   ========================================================================== */
+.lang-switch-box {
+    background: rgba(18, 26, 21, 0.65) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.24) !important;
+    padding: 6px 14px;
+    z-index: 1050;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+#header.header-scrolled .lang-switch-box {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.lang-switch-box .lang-globe {
+    color: #D4AF37;
+    font-size: 0.85rem;
+}
+
+.lang-switch-box .lang-btn {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.14em !important;
+    padding: 2px 4px !important;
+    cursor: pointer;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    line-height: 1;
+    outline: none !important;
+}
+
+.lang-switch-box .lang-btn:hover {
+    color: #FFFFFF !important;
+}
+
+.lang-switch-box .lang-btn.active {
+    color: #D4AF37 !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+    border-bottom: 2px solid #D4AF37 !important;
+}
+
+.lang-switch-box .lang-sep {
+    color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 0.7rem;
+    margin: 0 4px;
+    user-select: none;
+}
+
+@media (max-width: 575.98px) {
+    .lang-switch-box {
+        padding: 4px 8px;
+    }
+    .lang-switch-box .lang-btn {
+        font-size: 0.65rem !important;
+        padding: 2px 2px !important;
+    }
+    .lang-switch-box .lang-globe {
+        font-size: 0.72rem;
+        margin-right: 4px !important;
+    }
+}
+
 /* Enlaces del Nav: Sin líneas extra ni doradas */
 .navbar .nav-link {
     color: #FFFFFF !important;

@@ -52,6 +52,16 @@
         <div class="header-navbar d-flex align-items-center">
             <div class="container-fluid px-lg-6">
                 <nav class="navbar navbar-expand-xl py-0">
+                                        <!-- Selector de Idioma (Arriba a la izquierda: ES | EN | PT) -->
+                    <div class="lang-switch-box me-3 me-xl-4">
+                        <i class="fa-solid fa-globe lang-globe me-2"></i>
+                        <button type="button" class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+                        <span class="lang-sep">|</span>
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                        <span class="lang-sep">|</span>
+                        <button type="button" class="lang-btn" data-lang="pt" aria-label="Português">PT</button>
+                    </div>
+
                     <!-- Brand (Visible en Scroll / Móvil) -->
                     <a class="navbar-brand d-inline-flex align-items-center me-4" href="#hero">
                         <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Posada Casa Lopez" class="brand-text-logo" style="height: 72px; max-height: 72px; width: auto; filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.7));">
@@ -64,31 +74,40 @@
 
                     <!-- Offcanvas / Desktop Nav Menu -->
                     <div class="offcanvas offcanvas-navbar offcanvas-start border-end-0" tabindex="-1" id="offcanvasNavbar">
-                        <div class="offcanvas-header border-bottom" style="border-color: rgba(255, 255, 255, 0.12) !important;">
+                        <div class="offcanvas-header border-bottom d-flex justify-content-between align-items-center" style="border-color: rgba(255, 255, 255, 0.12) !important;">
                             <a href="#hero" class="d-inline-flex align-items-center">
                                 <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Casa Lopez" style="max-height: 42px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));">
                             </a>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="lang-switch-box py-1 px-2">
+                                    <button type="button" class="lang-btn active" data-lang="es">ES</button>
+                                    <span class="lang-sep">|</span>
+                                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                                    <span class="lang-sep">|</span>
+                                    <button type="button" class="lang-btn" data-lang="pt">PT</button>
+                                </div>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                            </div>
                         </div>
                         <div class="offcanvas-body align-items-center">
                             <ul class="navbar-nav mx-auto gap-2 gap-xl-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#hero">Inicio</a>
+                                    <a class="nav-link active" href="#hero" data-i18n="nav_home">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#about">La Posada</a>
+                                    <a class="nav-link" href="#about" data-i18n="nav_about">La Posada</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#facilities">Comodidades</a>
+                                    <a class="nav-link" href="#facilities" data-i18n="nav_facilities">Comodidades</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#rooms">Habitaciones</a>
+                                    <a class="nav-link" href="#rooms" data-i18n="nav_rooms">Habitaciones</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#services">Enoturismo</a>
+                                    <a class="nav-link" href="#services" data-i18n="nav_wine">Enoturismo</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#footer">Contacto</a>
+                                    <a class="nav-link" href="#footer" data-i18n="nav_contact">Contacto</a>
                                 </li>
                             </ul>
 
@@ -100,7 +119,7 @@
                                 </a>
                                 <a href="https://wa.me/5492615077635?text=Hola%20Posada%20Casa%20Lopez!%20Quisiera%20consultar%20disponibilidad%20para%20una%20estadia." target="_blank" rel="noopener" class="btn-clb-reserve">
                                     <i class="fa-brands fa-whatsapp fs-6"></i>
-                                    <span>Reservar</span>
+                                    <span data-i18n="btn_reserve">Reservar</span>
                                 </a>
                             </div>
                         </div>
@@ -135,13 +154,13 @@
             <div class="hero-center-stage">
                 <div class="hero-logo-wrapper">
                     <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Posada Casa Lopez - Chacras de Coria" class="hero-main-logo">
-                    <p class="hero-sub-subtitle">Chacras de Coria • Mendoza</p>
+                    <p class="hero-sub-subtitle" data-i18n="hero_subtitle">Chacras de Coria • Mendoza</p>
                 </div>
             </div>
 
             <!-- Indicador Scroll hacia abajo -->
             <a href="#bookingBar" class="hero-scroll-indicator">
-                <span>Descubrir</span>
+                <span data-i18n="hero_discover">Descubrir</span>
                 <div class="hero-scroll-icon"></div>
             </a>
         </section>
@@ -160,7 +179,7 @@
                                 <!-- Check-in -->
                                 <div class="col-12 col-md-4 col-lg-3">
                                     <label class="form-label small text-uppercase fw-semibold mb-1">
-                                        <i class="fa-regular fa-calendar-days me-1"></i> Check-in
+                                        <i class="fa-regular fa-calendar-days me-1"></i> <span data-i18n="book_checkin">Check-in</span>
                                     </label>
                                     <input type="date" id="inputCheckIn" class="form-control" required>
                                 </div>
@@ -168,7 +187,7 @@
                                 <!-- Check-out -->
                                 <div class="col-12 col-md-4 col-lg-3">
                                     <label class="form-label small text-uppercase fw-semibold mb-1">
-                                        <i class="fa-regular fa-calendar-days me-1"></i> Check-out
+                                        <i class="fa-regular fa-calendar-days me-1"></i> <span data-i18n="book_checkout">Check-out</span>
                                     </label>
                                     <input type="date" id="inputCheckOut" class="form-control" required>
                                 </div>
@@ -176,7 +195,7 @@
                                 <!-- Huéspedes & Habitación -->
                                 <div class="col-12 col-md-4 col-lg-3">
                                     <label class="form-label small text-uppercase fw-semibold mb-1">
-                                        <i class="fa-solid fa-user-group me-1"></i> Huéspedes
+                                        <i class="fa-solid fa-user-group me-1"></i> <span data-i18n="book_guests">Huéspedes</span>
                                     </label>
                                     <select id="selectGuests" class="form-select">
                                         <option value="1 Huésped">1 Adulto</option>
@@ -191,7 +210,7 @@
                                 <div class="col-12 col-lg-3 mt-md-4 mt-lg-3 pt-md-2">
                                     <button type="submit" class="btn btn-search-booking w-100 d-flex align-items-center justify-content-center gap-2">
                                         <i class="fa-solid fa-bed"></i>
-                                        <span>Ver Habitaciones</span>
+                                        <span data-i18n="book_btn">Ver Habitaciones</span>
                                     </button>
                                 </div>
                             </form>
@@ -210,12 +229,12 @@
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
                         <div class="pe-lg-5">
-                            <span class="section-tag d-block mb-2">Hospitalidad & Naturaleza</span>
-                            <h2 class="section-title mb-3">Bienvenidos a Casa Lopez</h2>
+                            <span class="section-tag d-block mb-2" data-i18n="about_tag">Hospitalidad & Naturaleza</span>
+                            <h2 class="section-title mb-3" data-i18n="about_title">Bienvenidos a Casa Lopez</h2>
                             
                             <!-- Frase Identitaria de Instagram @casalopez.posada -->
                             <p class="fst-italic text-navy mb-4 title-editorial" style="font-size: 1.25rem;">
-                                "Un lugar para bajar el ritmo y disfrutar lo simple. 🍃 Chacras de Coria, Mendoza"
+                                <span data-i18n="about_quote">"Un lugar para bajar el ritmo y disfrutar lo simple. 🍃 Chacras de Coria, Mendoza"</span>
                             </p>
 
                             <!-- Badges de Reputación Reales -->
@@ -231,13 +250,13 @@
                             </div>
 
                             <p class="lead mb-4" style="font-size: 1.05rem; line-height: 1.7; color: var(--clb-text-navy); font-weight: 500;">
-                                Posada boutique atendida cálidamente por sus propios dueños, oriundos de Chacras de Coria desde que era un pequeño pueblo rodeado de viñas centenarias.
+                                <span data-i18n="about_lead">Posada boutique atendida cálidamente por sus propios dueños, oriundos de Chacras de Coria desde que era un pequeño pueblo rodeado de viñas centenarias.</span>
                             </p>
                             <p class="text-muted mb-4" style="line-height: 1.8;">
-                                Nuestro anhelo es que cada huésped viva experiencias memorables en este rincón pintoresco de Mendoza. Un parque arbolado con ejemplares frondosos y el cantar de los pájaros convierten a Casa Lopez en un verdadero oasis de paz, silencio y reconexión.
+                                <span data-i18n="about_p1">Nuestro anhelo es que cada huésped viva experiencias memorables en este rincón pintoresco de Mendoza. Un parque arbolado con ejemplares frondosos y el cantar de los pájaros convierten a Casa Lopez en un verdadero oasis de paz, silencio y reconexión.</span>
                             </p>
                             <p class="text-muted mb-5" style="line-height: 1.8;">
-                                Disfruta de nuestra piscina al aire libre rodeada de césped verde, desayunos caseros recién horneados todas las mañanas y la cercanía inmediata a las bodegas más emblemáticas de Luján de Cuyo.
+                                <span data-i18n="about_p2">Disfruta de nuestra piscina al aire libre rodeada de césped verde, desayunos caseros recién horneados todas las mañanas y la cercanía inmediata a las bodegas más emblemáticas de Luján de Cuyo.</span>
                             </p>
 
                             <!-- Mini Features -->
@@ -255,8 +274,8 @@
                                     <div class="d-flex align-items-center p-3 bg-white border border-opacity-10 shadow-none">
                                         <i class="fa-solid fa-water-ladder fs-2 text-navy me-3"></i>
                                         <div>
-                                            <h6 class="fw-bold mb-1 text-navy">Piscina & Parque</h6>
-                                            <small class="text-muted">Solárium y relax natural</small>
+                                            <h6 class="fw-bold mb-1 text-navy" data-i18n="about_feat_pool_title">Piscina & Parque</h6>
+                                            <small class="text-muted" data-i18n="about_feat_pool_sub">Solárium y relax natural</small>
                                         </div>
                                     </div>
                                 </div>
@@ -272,8 +291,8 @@
                             </div>
                             <!-- Floating Seal -->
                             <div class="position-absolute bottom-0 start-0 translate-middle-y p-3 shadow-sm ms-4 border text-center" style="background: var(--clb-primary); border-color: rgba(255, 255, 255, 0.2) !important;">
-                                <span class="d-block text-gold text-uppercase small letter-spacing-1 fw-semibold">Atendido por sus</span>
-                                <span class="h5 fw-bold text-white mb-0 serif-font">Propios Dueños</span>
+                                <span class="d-block text-gold text-uppercase small letter-spacing-1 fw-semibold" data-i18n="about_owners_badge_1">Atendido por sus</span>
+                                <span class="h5 fw-bold text-white mb-0 serif-font" data-i18n="about_owners_badge_2">Propios Dueños</span>
                             </div>
                         </div>
                     </div>
@@ -288,9 +307,9 @@
         <section id="facilities" class="pt-16 pb-16 text-center position-relative bg-botanical-dark text-white">
             <div class="container">
                 <div class="max-w-2xl mx-auto mb-12">
-                    <span class="section-tag text-gold d-block mb-2">Confort & Bienestar</span>
-                    <h2 class="section-title text-white mb-3">Servicios para tu Descanso</h2>
-                    <p class="text-white-50 fs-6">Cada detalle en Casa Lopez está pensado para brindar una estadía relajante y sin preocupaciones.</p>
+                    <span class="section-tag text-gold d-block mb-2" data-i18n="fac_tag">Confort & Bienestar</span>
+                    <h2 class="section-title text-white mb-3" data-i18n="fac_title">Servicios para tu Descanso</h2>
+                    <p class="text-white-50 fs-6"><span data-i18n="fac_desc">Cada detalle en Casa Lopez está pensado para brindar una estadía relajante y sin preocupaciones.</span></p>
                 </div>
 
                 <div class="row g-4 g-lg-5 justify-content-center">
@@ -300,8 +319,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-water-ladder fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Piscina al Aire Libre</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Agua cristalina rodeada de parque verde y reposeras para los días soleados de Mendoza.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_pool_title">Piscina al Aire Libre</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_pool_desc">Agua cristalina rodeada de parque verde y reposeras para los días soleados de Mendoza.</span></p>
                         </div>
                     </div>
 
@@ -311,8 +330,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-mug-hot fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Desayuno Incluido</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Deliciosos productos locales, repostería casera, café de calidad y frutas de estación.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_breakfast_title">Desayuno Incluido</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_breakfast_desc">Deliciosos productos locales, repostería casera, café de calidad y frutas de estación.</span></p>
                         </div>
                     </div>
 
@@ -322,8 +341,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-tree fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Jardín & Terraza</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Árboles añosos, pérgolas sombreadas y el sonido de las aves en un entorno campestre.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_garden_title">Jardín & Terraza</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_garden_desc">Árboles añosos, pérgolas sombreadas y el sonido de las aves en un entorno campestre.</span></p>
                         </div>
                     </div>
 
@@ -333,8 +352,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-wifi fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Wi-Fi de Alta Velocidad</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Cobertura sin cargo en todas las habitaciones y sectores comunes del predio.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_wifi_title">Wi-Fi de Alta Velocidad</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_wifi_desc">Cobertura sin cargo en todas las habitaciones y sectores comunes del predio.</span></p>
                         </div>
                     </div>
 
@@ -344,8 +363,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-snowflake fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Aire Acondicionado</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Equipos split frío/calor individuales en cada suite para confort térmico total.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_ac_title">Aire Acondicionado</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_ac_desc">Equipos split frío/calor individuales en cada suite para confort térmico total.</span></p>
                         </div>
                     </div>
 
@@ -355,8 +374,8 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-square-parking fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Parking Privado</h5>
-                            <p class="text-white-50 small mb-0 d-none d-sm-block">Estacionamiento cerrado dentro de la propiedad para la máxima seguridad de tu vehículo.</p>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_parking_title">Parking Privado</h5>
+                            <p class="text-white-50 small mb-0 d-none d-sm-block"><span data-i18n="fac_parking_desc">Estacionamiento cerrado dentro de la propiedad para la máxima seguridad de tu vehículo.</span></p>
                         </div>
                     </div>
 
@@ -377,7 +396,7 @@
                             <div class="facility-icon-badge-dark mx-auto mb-3">
                                 <i class="fa-solid fa-wine-glass fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-2 text-white fs-6">Asesoría de Bodegas</h5>
+                            <h5 class="fw-bold mb-2 text-white fs-6" data-i18n="fac_wine_title">Asesoría de Bodegas</h5>
                             <p class="text-white-50 small mb-0 d-none d-sm-block">Recomendaciones exclusivas y reservas en los mejores viñedos y restaurantes de la zona.</p>
                         </div>
                     </div>
@@ -427,7 +446,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('cipres'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -454,7 +473,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('ombu'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -481,7 +500,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('alamo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -508,7 +527,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('damasco'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -535,7 +554,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('datil'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -562,7 +581,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('sauce'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -589,7 +608,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('tamarindo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -616,7 +635,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('nogal'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -643,7 +662,7 @@
                                     </ul>
                                 </div>
                                 <a href="javascript:void(0)" onclick="goToRoomDetail('ceibo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
-                                    <span>Ver Ficha & Reservar</span>
+                                    <span data-i18n="room_btn_view">Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -737,28 +756,28 @@
                                 <div class="p-3">
                                     <i class="fa-solid fa-mug-hot text-gold fs-2 mb-2"></i>
                                     <h6 class="fw-bold text-white mb-1">Desayuno Incluido</h6>
-                                    <small class="text-white-50">Casero todas las mañanas</small>
+                                    <small class="text-white-50" data-i18n="ben_2_desc">Casero todas las mañanas</small>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
                                 <div class="p-3">
                                     <i class="fa-solid fa-clock text-gold fs-2 mb-2"></i>
-                                    <h6 class="fw-bold text-white mb-1">Flexibilidad</h6>
-                                    <small class="text-white-50">Early check-in s/ disp.</small>
+                                    <h6 class="fw-bold text-white mb-1" data-i18n="ben_3_title">Flexibilidad</h6>
+                                    <small class="text-white-50" data-i18n="ben_3_desc">Early check-in s/ disp.</small>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
                                 <div class="p-3">
                                     <i class="fa-solid fa-comments text-gold fs-2 mb-2"></i>
-                                    <h6 class="fw-bold text-white mb-1">WhatsApp Directo</h6>
-                                    <small class="text-white-50">Respuesta inmediata</small>
+                                    <h6 class="fw-bold text-white mb-1" data-i18n="ben_4_title">WhatsApp Directo</h6>
+                                    <small class="text-white-50" data-i18n="ben_4_desc">Respuesta inmediata</small>
                                 </div>
                             </div>
                         </div>
 
                         <a href="https://wa.me/5492615077635?text=Hola%20Casa%20Lopez!%20Quiero%20consultar%20la%20tarifa%20directa%20para%20una%20reserva." target="_blank" class="btn btn-clb-reserve px-5 py-3 fs-6">
                             <i class="fa-brands fa-whatsapp fs-5"></i>
-                            <span>Contactar por WhatsApp</span>
+                            <span data-i18n="ben_btn">Contactar por WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -777,7 +796,7 @@
                 <div class="col-lg-4">
                     <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Posada Casa Lopez" style="max-height: 125px; width: auto; margin-bottom: 20px;">
                     <p class="text-white-50 mb-4 small" style="line-height: 1.8;">
-                        Posada boutique atendida por sus dueños en Chacras de Coria, Mendoza. Tranquilidad campestre, frondosos jardines, piscina y calidez mendocina a pasos de las bodegas más destacadas.
+                        <span data-i18n="footer_desc">Posada boutique atendida por sus dueños en Chacras de Coria, Mendoza. Tranquilidad campestre, frondosos jardines, piscina y calidez mendocina a pasos de las bodegas más destacadas.</span>
                     </p>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="badge px-3 py-2 fw-semibold" style="background-color: rgba(255, 255, 255, 0.08); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 0; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem;">⭐ 9.1 Booking.com</span>
@@ -787,19 +806,19 @@
 
                 <!-- Columna 2: Contacto & Teléfonos -->
                 <div class="col-lg-4">
-                    <h5 class="fw-bold text-uppercase text-white mb-4" style="letter-spacing: 0.18rem; font-size: 0.9rem;">Información de Contacto</h5>
+                    <h5 class="fw-bold text-uppercase text-white mb-4" style="letter-spacing: 0.18rem; font-size: 0.9rem;" data-i18n="footer_contact_title">Información de Contacto</h5>
                     <ul class="list-unstyled text-white-50 mb-0 d-flex flex-column gap-3 small">
                         <li>
                             <i class="fa-solid fa-location-dot text-gold me-2"></i>
-                            <strong class="text-white">Dirección:</strong> Medrano 2715, Chacras de Coria, Luján de Cuyo, Mendoza (CP 5505)
+                            <strong class="text-white" data-i18n="footer_addr_lbl">Dirección:</strong> Medrano 2715, Chacras de Coria, Luján de Cuyo, Mendoza (CP 5505)
                         </li>
                         <li>
                             <i class="fa-brands fa-whatsapp text-gold me-2"></i>
-                            <strong class="text-white">WhatsApp Directo:</strong> <a href="https://wa.me/5492615077635" target="_blank" class="text-decoration-none" style="color: #F8F7F4;">+54 9 261 507-7635</a>
+                            <strong class="text-white" data-i18n="footer_wa_lbl">WhatsApp Directo:</strong> <a href="https://wa.me/5492615077635" target="_blank" class="text-decoration-none" style="color: #F8F7F4;">+54 9 261 507-7635</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-phone text-gold me-2"></i>
-                            <strong class="text-white">Teléfono Administración:</strong> <a href="tel:+5492616814252" class="text-white-50 text-decoration-none">+54 9 261 681-4252</a>
+                            <strong class="text-white" data-i18n="footer_tel_lbl">Teléfono Administración:</strong> <a href="tel:+5492616814252" class="text-white-50 text-decoration-none">+54 9 261 681-4252</a>
                         </li>
                         <li>
                             <i class="fa-brands fa-instagram text-gold me-2"></i>
@@ -807,27 +826,27 @@
                         </li>
                         <li>
                             <i class="fa-regular fa-clock text-gold me-2"></i>
-                            <strong class="text-white">Horarios:</strong> Check-in 14:00 hs • Check-out 11:00 hs
+                            <strong class="text-white" data-i18n="footer_hours_lbl">Horarios:</strong> <span data-i18n="footer_hours_val">Check-in 14:00 hs • Check-out 11:00 hs</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Columna 3: Mapa Interactivo -->
                 <div class="col-lg-4">
-                    <h5 class="fw-bold text-uppercase text-white mb-4" style="letter-spacing: 0.18rem; font-size: 0.9rem;">Ubicación en Chacras</h5>
+                    <h5 class="fw-bold text-uppercase text-white mb-4" style="letter-spacing: 0.18rem; font-size: 0.9rem;" data-i18n="footer_map_title">Ubicación en Chacras</h5>
                     <div class="ratio ratio-16x9 overflow-hidden shadow-none border border-white border-opacity-25">
                         <iframe src="https://maps.google.com/maps?q=Medrano%202715,%20Chacras%20de%20Coria,%20Mendoza&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <small class="d-block text-white-50 mt-2 text-center">Medrano 2715 — Fácil acceso por Ruta Panamericana / Acceso Sur</small>
+                    <small class="d-block text-white-50 mt-2 text-center"><span data-i18n="footer_map_hint">Medrano 2715 — Fácil acceso por Ruta Panamericana / Acceso Sur</span></small>
                 </div>
             </div>
 
             <!-- Developer Signature -->
             <div class="py-4 border-top border-white border-opacity-10 text-center">
                 <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                    <span class="text-white-50 small">© 2026 Posada Casa Lopez. Todos los derechos reservados.</span>
+                    <span class="text-white-50 small"><span data-i18n="footer_rights">© 2026 Posada Casa Lopez. Todos los derechos reservados.</span></span>
                     <div class="d-inline-flex align-items-center gap-1 opacity-75">
-                        <span class="text-white-50" style="font-size: 0.75rem; letter-spacing: 0.04em;">Desarrollado por</span>
+                        <span class="text-white-50" style="font-size: 0.75rem; letter-spacing: 0.04em;"><span data-i18n="footer_dev_by">Desarrollado por</span></span>
                         <a href="https://burdev.pages.dev" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #F8F7F4; font-weight: 600; font-size: 0.82rem;">
                             Burdev.
                         </a>
@@ -846,6 +865,7 @@
     <!-- Scripts de Terceros y Tema -->
     <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
     <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/theme.js"></script>
 
     <!-- Script de Automatización del Hero Slider y Sticky Booking -->
