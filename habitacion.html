@@ -46,13 +46,16 @@
                         <i class="fa-solid fa-arrow-left text-gold"></i>
                         <span data-i18n="room_back_link">Volver a la Posada</span>
                     </a>
-                    <div class="lang-switch-box py-1 px-2 d-inline-flex align-items-center">
-                        <i class="fa-solid fa-globe lang-globe me-2"></i>
-                        <button type="button" class="lang-btn active" data-lang="es">ES</button>
-                        <span class="lang-sep">|</span>
-                        <button type="button" class="lang-btn" data-lang="en">EN</button>
-                        <span class="lang-sep">|</span>
-                        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+                    <div class="dropdown lang-dropdown d-inline-flex align-items-center">
+                        <button class="btn btn-lang-clean dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleccionar idioma">
+                            <i class="fa-solid fa-globe lang-globe"></i>
+                            <span class="active-lang-text">ES</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark lang-dropdown-menu">
+                            <li><button type="button" class="dropdown-item lang-btn active" data-lang="es">Español (ES)</button></li>
+                            <li><button type="button" class="dropdown-item lang-btn" data-lang="en">English (EN)</button></li>
+                            <li><button type="button" class="dropdown-item lang-btn" data-lang="pt">Português (PT)</button></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -1081,15 +1084,8 @@
         });
 
     </script>
-    <script src="assets/js/i18n.js">
-        window.addEventListener('casalopez:langchange', function () {
-            if (currentRoomId) {
-                loadRoom(currentRoomId);
-                buildOtherRoomsPills();
-                recalculateBooking();
-            }
-        });
-
-    </script>
+    <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 </html>

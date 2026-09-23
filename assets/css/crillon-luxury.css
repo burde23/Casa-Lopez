@@ -174,75 +174,155 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
 }
 
 /* ==========================================================================
-   SELECTOR DE IDIOMA (LANGUAGE SWITCHER: ES | EN | PT)
+   SELECTOR DE IDIOMA MINIMALISTA (CLEAN LANGUAGE SWITCHER)
+   Sin caja contenedora: Solo ícono de mundo + ES / EN / PT
    ========================================================================== */
-.lang-switch-box {
-    background: rgba(18, 26, 21, 0.65) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.24) !important;
-    padding: 6px 14px;
-    z-index: 1050;
-    transition: all 0.3s ease;
+.lang-dropdown {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-#header.header-scrolled .lang-switch-box {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.18) !important;
-}
-
-.lang-switch-box .lang-globe {
-    color: #D4AF37;
-    font-size: 0.85rem;
-}
-
-.lang-switch-box .lang-btn {
+.btn-lang-clean {
     background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
-    color: rgba(255, 255, 255, 0.72) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.72rem !important;
+    font-size: 0.76rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
     padding: 2px 4px !important;
-    cursor: pointer;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
-    line-height: 1;
-    outline: none !important;
-}
-
-.lang-switch-box .lang-btn:hover {
-    color: #FFFFFF !important;
-}
-
-.lang-switch-box .lang-btn.active {
-    color: #D4AF37 !important;
-    font-weight: 700 !important;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
-    border-bottom: 2px solid #D4AF37 !important;
-}
-
-.lang-switch-box .lang-sep {
-    color: rgba(255, 255, 255, 0.35) !important;
-    font-size: 0.7rem;
-    margin: 0 4px;
+    cursor: pointer !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+    transition: color 0.25s ease, opacity 0.25s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px;
+    line-height: 1 !important;
     user-select: none;
 }
 
-@media (max-width: 575.98px) {
-    .lang-switch-box {
-        padding: 4px 8px;
+.btn-lang-clean::after {
+    display: none !important; /* Elimina la flecha de dropdown por defecto */
+}
+
+.btn-lang-clean .lang-globe {
+    color: #D4AF37 !important;
+    font-size: 0.88rem !important;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+.btn-lang-clean .active-lang-text {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.14em !important;
+    transition: color 0.2s ease;
+}
+
+.btn-lang-clean:hover {
+    color: #D4AF37 !important;
+}
+
+.btn-lang-clean:hover .active-lang-text {
+    color: #D4AF37 !important;
+}
+
+.btn-lang-clean:hover .lang-globe {
+    transform: rotate(20deg);
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
+}
+
+#header.header-scrolled .btn-lang-clean {
+    text-shadow: none !important;
+}
+
+/* Dropdown Menu de Idiomas de Lujo */
+.lang-dropdown-menu {
+    background: rgba(18, 26, 21, 0.97) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    min-width: 145px !important;
+    padding: 6px 0 !important;
+    margin-top: 8px !important;
+    z-index: 1060 !important;
+}
+
+.lang-dropdown-menu .dropdown-item {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 16px !important;
+    background: transparent !important;
+    border: none !important;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+}
+
+.lang-dropdown-menu .dropdown-item:hover,
+.lang-dropdown-menu .dropdown-item:focus {
+    background: rgba(212, 175, 55, 0.16) !important;
+    color: #D4AF37 !important;
+    padding-left: 20px !important;
+}
+
+.lang-dropdown-menu .dropdown-item.active {
+    background: rgba(212, 175, 55, 0.22) !important;
+    color: #D4AF37 !important;
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   POSICIONAMIENTO DINÁMICO DESKTOP:
+   - En Hero: Switcher a la Izquierda, Logo oculto, Switcher derecha oculto
+   - Al Scroll: Logo a la Izquierda, Switcher izquierda oculto, Switcher a la Derecha
+   ========================================================================== */
+@media (min-width: 1200px) {
+    #header:not(.header-scrolled) .lang-switch-desktop-left {
+        display: inline-flex !important;
     }
-    .lang-switch-box .lang-btn {
-        font-size: 0.65rem !important;
-        padding: 2px 2px !important;
+    #header:not(.header-scrolled) .lang-switch-desktop-right {
+        display: none !important;
     }
-    .lang-switch-box .lang-globe {
-        font-size: 0.72rem;
-        margin-right: 4px !important;
+    #header:not(.header-scrolled) .navbar-brand {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    #header.header-scrolled .lang-switch-desktop-left {
+        display: none !important;
+    }
+    #header.header-scrolled .lang-switch-desktop-right {
+        display: inline-flex !important;
+    }
+    #header.header-scrolled .navbar-brand {
+        display: inline-flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .lang-switch-desktop-left {
+        display: inline-flex !important;
+    }
+    .lang-switch-desktop-right {
+        display: none !important;
     }
 }
 
@@ -355,6 +435,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     }
 
     #header:not(.header-scrolled) .navbar-brand {
+        display: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;

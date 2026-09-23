@@ -955,13 +955,16 @@
             }
         }
 
-        // 5. Update active state on all language buttons
+        // 5. Update active state on all language buttons & labels
         document.querySelectorAll('.lang-btn').forEach(btn => {
             if (btn.getAttribute('data-lang') === lang) {
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
             }
+        });
+        document.querySelectorAll('.active-lang-text').forEach(el => {
+            el.textContent = lang.toUpperCase();
         });
 
         // 6. Update room cards on index.html
@@ -1013,10 +1016,35 @@
 
     function init() {
         document.addEventListener('click', function (e) {
+            // Toggling clean language dropdown button
+            const toggle = e.target.closest('.btn-lang-clean');
+            if (toggle) {
+                e.preventDefault();
+                e.stopPropagation();
+                const parent = toggle.closest('.lang-dropdown');
+                const menu = parent ? parent.querySelector('.lang-dropdown-menu') : null;
+                if (menu) {
+                    const isOpen = menu.classList.contains('show');
+                    document.querySelectorAll('.lang-dropdown-menu.show').forEach(m => m.classList.remove('show'));
+                    if (!isOpen) {
+                        menu.classList.add('show');
+                    }
+                }
+                return;
+            }
+
+            // Clicking language item option
             const btn = e.target.closest('.lang-btn');
             if (btn && btn.hasAttribute('data-lang')) {
                 e.preventDefault();
                 setLanguage(btn.getAttribute('data-lang'));
+                document.querySelectorAll('.lang-dropdown-menu.show').forEach(m => m.classList.remove('show'));
+                return;
+            }
+
+            // Click outside closes any open dropdown menus
+            if (!e.target.closest('.lang-dropdown')) {
+                document.querySelectorAll('.lang-dropdown-menu.show').forEach(m => m.classList.remove('show'));
             }
         });
 
