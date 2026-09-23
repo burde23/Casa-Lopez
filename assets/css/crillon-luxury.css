@@ -513,7 +513,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
 }
 
 .hero-main-logo {
-    max-height: 280px;
+    max-height: 320px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
@@ -1061,7 +1061,7 @@ section {
         font-size: 2.1rem;
     }
     .hero-main-logo {
-        max-height: 210px;
+        max-height: 250px;
     }
     .hero-sub-subtitle {
         font-size: 0.78rem;
@@ -1074,7 +1074,7 @@ section {
 
 @media (max-width: 575.98px) {
     .hero-main-logo {
-        max-height: 160px;
+        max-height: 200px;
     }
     .hero-sub-subtitle {
         font-size: 0.7rem;
