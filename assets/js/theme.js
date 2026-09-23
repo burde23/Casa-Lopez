@@ -1222,26 +1222,42 @@ var theme = {
         // Select the preloader element
         const preloader = document.querySelector('#preloader');
 
-        // Check if the preloader element exists
         if (preloader) {
-            window.onload = function () {
-                // Check if all resources have been successfully loaded
-                if (document.readyState === 'complete') {
-                    // Define a function to remove the preloader
-                    function removePreloader() {
-                        // Remove the preloader element from the DOM
+            let isRemoved = false;
+            const removePreloader = () => {
+                if (isRemoved) return;
+                isRemoved = true;
+
+                // Add fade out and zoom out transition class
+                preloader.classList.add('preloader-hidden');
+
+                // Restore body scrolling
+                document.body.classList.remove('vh-100', 'vw-100', 'overflow-hidden');
+
+                // Remove from DOM after CSS transition completes
+                setTimeout(() => {
+                    if (preloader.parentNode) {
                         preloader.remove();
-                        // Remove classes from the body element
-                        document.body.classList.remove('vh-100', 'vw-100', 'overflow-hidden');
                     }
-                    // Set a timeout to call the removePreloader function after 1500ms
-                    setTimeout(() => {
-                        // Use requestAnimationFrame to call the removePreloader function
-                        window.requestAnimationFrame(removePreloader);
-                    }, 350);
-                }
+                }, 900);
             };
 
+            const minDisplayTime = 750; // Minimal display time for animation appreciation
+            const startTime = Date.now();
+
+            const onPageReady = () => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, minDisplayTime - elapsed);
+                setTimeout(removePreloader, remaining);
+            };
+
+            if (document.readyState === 'complete') {
+                onPageReady();
+            } else {
+                window.addEventListener('load', onPageReady);
+                // Safety fallback if some third-party asset delays loading
+                setTimeout(removePreloader, 3500);
+            }
         }
     },
 

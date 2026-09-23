@@ -22,6 +22,22 @@
 </head>
 <body class="bg-stone-surface d-flex flex-column h-100">
 
+    <!-- Preloader Luxury -->
+    <div id="preloader" class="preloader-luxury">
+        <div class="preloader-ambient-glow"></div>
+        <div class="preloader-content">
+            <div class="preloader-logo-wrap">
+                <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Posada Casa Lopez" class="preloader-luxury-logo">
+                <div class="preloader-logo-shimmer"></div>
+            </div>
+            <div class="preloader-progress-track">
+                <div class="preloader-progress-bar"></div>
+            </div>
+            <p class="preloader-caption">CHACRAS DE CORIA &bull; MENDOZA</p>
+        </div>
+    </div>
+    <!-- /Preloader Luxury -->
+
     <!-- Header Superior -->
     <header class="room-detail-header sticky-top shadow-sm">
         <div class="container">
@@ -979,6 +995,29 @@
                 document.getElementById('mpStepSuccess').classList.remove('d-none');
             }, 2200);
         }
+
+        // Luxury preloader transition
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(function () {
+                    preloader.classList.add('preloader-hidden');
+                    setTimeout(function () {
+                        if (preloader.parentNode) preloader.remove();
+                    }, 850);
+                }, 550);
+            }
+        });
+        // Safety timeout
+        setTimeout(function () {
+            const preloader = document.getElementById('preloader');
+            if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                preloader.classList.add('preloader-hidden');
+                setTimeout(function () {
+                    if (preloader.parentNode) preloader.remove();
+                }, 850);
+            }
+        }, 3000);
     </script>
 </body>
 </html>
