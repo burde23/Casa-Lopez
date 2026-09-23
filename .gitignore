@@ -1,0 +1,14 @@
+﻿# OS & System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+
+# Offline Reference Downloads
+Crillon Le Brave _ 5-star hotel _ Provence.html
+Crillon Le Brave _ 5-star hotel _ Provence_files/
+custom_live.css
