@@ -152,7 +152,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-11">
                         <div class="card booking-luxury-card p-4 p-md-5">
-                            <form id="bookingInquiryForm" class="row g-3 align-items-center" onsubmit="handleDirectBooking(event)">
+                            <form id="bookingInquiryForm" class="row g-3 align-items-center" onsubmit="handleViewRooms(event)">
                                 <!-- Check-in -->
                                 <div class="col-12 col-md-4 col-lg-3">
                                     <label class="form-label small text-uppercase fw-semibold mb-1">
@@ -183,11 +183,11 @@
                                     </select>
                                 </div>
 
-                                <!-- Botón Consultar Disponibilidad -->
+                                <!-- Botón Ver Habitaciones -->
                                 <div class="col-12 col-lg-3 mt-md-4 mt-lg-3 pt-md-2">
                                     <button type="submit" class="btn btn-search-booking w-100 d-flex align-items-center justify-content-center gap-2">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>Consultar</span>
+                                        <i class="fa-solid fa-bed"></i>
+                                        <span>Ver Habitaciones</span>
                                     </button>
                                 </div>
                             </form>
@@ -387,16 +387,25 @@
              ============================================================== -->
         <section id="rooms" class="pt-16 pb-16 bg-stone-surface">
             <div class="container">
-                <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="section-tag d-block mb-2">Exclusividad & Silencio</span>
                     <h2 class="section-title mb-3">Nuestras 9 Habitaciones</h2>
                     <p class="text-muted">Unidades boutique privadas con vistas al jardín, ropa blanca de alta calidad y versatilidad total entre camas matrimoniales King y sommiers individuales.</p>
                 </div>
 
+                <!-- Banner dinámico de fechas activas -->
+                <div id="availabilityBanner" class="alert d-none align-items-center justify-content-between mb-8 p-3 p-md-4 bg-white border border-dark border-opacity-10 shadow-sm" style="border-left: 5px solid var(--clb-primary) !important;">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-calendar-check text-gold fs-4"></i>
+                        <span id="availabilityBannerText" class="small fw-semibold text-navy"></span>
+                    </div>
+                    <span class="badge bg-botanical-dark text-white text-uppercase py-2 px-3 d-none d-md-inline-block" style="letter-spacing: 0.12em; font-size: 0.72rem;">Mejor Tarifa Online</span>
+                </div>
+
                 <div class="row g-4 g-lg-5">
                     <!-- Room 1: Suite Ciprés -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('cipres')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/cypres.jpg" class="card-img-top room-card-img w-100" alt="Suite Ciprés">
                             </div>
@@ -413,8 +422,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Suite%20Cipres." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Suite</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('cipres'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -423,7 +432,7 @@
 
                     <!-- Room 2: Suite Ombú -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('ombu')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/ombu.jpg" class="card-img-top room-card-img w-100" alt="Suite Ombú">
                             </div>
@@ -440,8 +449,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Suite%20Ombu." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Suite</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('ombu'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -450,7 +459,7 @@
 
                     <!-- Room 3: Suite Álamo -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('alamo')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/alamo.jpg" class="card-img-top room-card-img w-100" alt="Suite Álamo">
                             </div>
@@ -467,8 +476,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Suite%20Alamo." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Suite</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('alamo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -477,7 +486,7 @@
 
                     <!-- Room 4: Habitación Damasco -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('damasco')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/damasco.jpg" class="card-img-top room-card-img w-100" alt="Habitación Damasco">
                             </div>
@@ -494,8 +503,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Habitacion%20Damasco." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Habitación</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('damasco'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -504,7 +513,7 @@
 
                     <!-- Room 5: Habitación Dátil -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('datil')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/datil.jpg" class="card-img-top room-card-img w-100" alt="Habitación Dátil">
                             </div>
@@ -521,8 +530,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Habitacion%20Datil." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Habitación</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('datil'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -531,7 +540,7 @@
 
                     <!-- Room 6: Suite Sauce -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('sauce')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/sauce.jpg" class="card-img-top room-card-img w-100" alt="Suite Sauce">
                             </div>
@@ -548,8 +557,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Suite%20Sauce." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Suite</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('sauce'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -558,7 +567,7 @@
 
                     <!-- Room 7: Depto Tamarindo -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('tamarindo')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/tamarindo.jpg" class="card-img-top room-card-img w-100" alt="Departamento Tamarindo">
                             </div>
@@ -575,8 +584,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20el%20Departamento%20Tamarindo." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Depto</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('tamarindo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -585,7 +594,7 @@
 
                     <!-- Room 8: Habitación Nogal -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('nogal')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/nogal.jpg" class="card-img-top room-card-img w-100" alt="Habitación Nogal">
                             </div>
@@ -602,8 +611,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Habitacion%20Nogal." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Habitación</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('nogal'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -612,7 +621,7 @@
 
                     <!-- Room 9: Suite Ceibo -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-luxury h-100 overflow-hidden">
+                        <div class="card card-luxury room-card-clickable h-100 overflow-hidden" onclick="goToRoomDetail('ceibo')">
                             <div class="overflow-hidden">
                                 <img src="assets/img/rooms/ceibo.jpg" class="card-img-top room-card-img w-100" alt="Suite Ceibo">
                             </div>
@@ -629,8 +638,8 @@
                                         <li><i class="fa-solid fa-bath text-navy me-1"></i> Baño Privado</li>
                                     </ul>
                                 </div>
-                                <a href="https://wa.me/5492615077635?text=Hola!%20Quiero%20consultar%20disponibilidad%20para%20la%20Suite%20Ceibo." target="_blank" class="btn-room-action w-100 justify-content-center">
-                                    <span>Consultar Suite</span>
+                                <a href="javascript:void(0)" onclick="goToRoomDetail('ceibo'); event.stopPropagation();" class="btn-room-action w-100 justify-content-center">
+                                    <span>Ver Ficha & Reservar</span>
                                     <i class="fa-solid fa-arrow-right small"></i>
                                 </a>
                             </div>
@@ -892,17 +901,33 @@
             }
         });
 
-        // 4. FUNCIÓN PARA DERIVAR CONSULTA DIRECTA A WHATSAPP
-        function handleDirectBooking(event) {
-            event.preventDefault();
+        // 4. FUNCIÓN PARA VER HABITACIONES Y DESPLAZARSE CON PARÁMETROS
+        function handleViewRooms(event) {
+            if (event) event.preventDefault();
             const checkIn = document.getElementById('inputCheckIn').value;
             const checkOut = document.getElementById('inputCheckOut').value;
             const guests = document.getElementById('selectGuests').value;
 
-            const textMsg = `¡Hola Posada Casa Lopez! Me gustaría consultar disponibilidad para una estadía:%0A• Check-in: ${checkIn}%0A• Check-out: ${checkOut}%0A• Huéspedes: ${guests}%0A¿Tienen disponibilidad y tarifas para esas fechas? ¡Muchas gracias!`;
-            
-            const waUrl = `https://wa.me/5492615077635?text=${textMsg}`;
-            window.open(waUrl, '_blank');
+            const banner = document.getElementById('availabilityBanner');
+            const bannerText = document.getElementById('availabilityBannerText');
+            if (banner && bannerText) {
+                bannerText.innerHTML = `Tarifas y disponibilidad para <strong>${guests}</strong> del <strong>${checkIn}</strong> al <strong>${checkOut}</strong>. Hacé clic en cualquier suite para ver su ficha y reservar online con Mercado Pago.`;
+                banner.classList.remove('d-none');
+                banner.classList.add('d-flex');
+            }
+
+            const roomsSec = document.getElementById('rooms');
+            if (roomsSec) {
+                roomsSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 5. FUNCIÓN PARA IR A LA PÁGINA PROPIA DE LA HABITACIÓN CON FECHAS
+        function goToRoomDetail(roomId) {
+            const checkIn = document.getElementById('inputCheckIn')?.value || '';
+            const checkOut = document.getElementById('inputCheckOut')?.value || '';
+            const guests = encodeURIComponent(document.getElementById('selectGuests')?.value || '2 Huéspedes (Pareja)');
+            window.location.href = `habitacion.html?id=${roomId}&checkin=${checkIn}&checkout=${checkOut}&guests=${guests}`;
         }
     </script>
 </body>

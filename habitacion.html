@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reserva de Habitación • Posada Casa Lopez</title>
+    <meta name="description" content="Reserva directa y checkout online para Posada Casa Lopez en Chacras de Coria, Mendoza. Mejor tarifa online garantizada.">
+    <link rel="shortcut icon" href="assets/img/logos/favicon.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS Plugins & Base -->
+    <link href="assets/css/plugins.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/crillon-luxury.css" rel="stylesheet">
+</head>
+<body class="bg-stone-surface d-flex flex-column h-100">
+
+    <!-- Header Superior -->
+    <header class="room-detail-header sticky-top shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.html#rooms" class="d-inline-flex align-items-center gap-2 text-white text-decoration-none small text-uppercase fw-semibold" style="letter-spacing: 0.16em;">
+                    <i class="fa-solid fa-arrow-left text-gold"></i>
+                    <span>Volver a la Posada</span>
+                </a>
+
+                <a href="index.html" class="d-inline-flex align-items-center">
+                    <img src="assets/img/logos/casa_lopez_completo_hd.png" alt="Posada Casa Lopez" style="max-height: 44px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));">
+                </a>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="tel:+5492615077635" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2 small">
+                        <i class="fa-solid fa-phone text-gold"></i>
+                        <span class="d-none d-lg-inline">+54 9 261 507-7635</span>
+                    </a>
+                    <a href="https://wa.me/5492615077635" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm text-uppercase d-none d-sm-inline-flex align-items-center gap-2" style="font-size: 0.72rem; letter-spacing: 0.14em; padding: 7px 15px;">
+                        <i class="fa-brands fa-whatsapp text-success"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-shrink-0 py-8 py-lg-12">
+        <div class="container">
+
+            <!-- Breadcrumb / Header Titular de la Suite -->
+            <div class="mb-6">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-2">
+                    <span class="section-tag text-gold d-inline-block">Chacras de Coria • Mendoza</span>
+                    <span id="roomBadgePill" class="room-spec-pill">King o 2 Twins</span>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3">
+                    <div>
+                        <h1 id="roomTitle" class="section-title text-navy mb-1" style="font-size: 2.4rem;">Suite Ciprés</h1>
+                        <p id="roomTagline" class="text-muted mb-0 fs-6">Calma absoluta con vista directa al parque centenario</p>
+                    </div>
+                    <div class="text-md-end">
+                        <span class="small text-muted text-uppercase d-block fw-semibold" style="letter-spacing: 0.1em;">Tarifa Oficial Directa</span>
+                        <div class="d-inline-flex align-items-baseline gap-1">
+                            <span id="roomPriceHeader" class="fs-2 fw-bold text-navy">$125.000</span>
+                            <span class="text-muted small">/ noche</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería de Fotos -->
+            <div class="mb-8">
+                <div class="card overflow-hidden shadow-none border-0 mb-3">
+                    <img id="roomMainPhoto" src="assets/img/rooms/cypres.jpg" class="room-gallery-main-img" alt="Foto Habitación">
+                </div>
+                <div id="roomThumbnailsContainer" class="row g-2 g-md-3">
+                    <!-- Miniaturas dinámicas -->
+                </div>
+            </div>
+
+            <!-- Contenido Principal: Información a la izquierda + Card de Checkout a la derecha -->
+            <div class="row g-4 g-xl-5">
+
+                <!-- Columna Izquierda: Descripción y Detalles -->
+                <div class="col-lg-7">
+                    <!-- Resumen Arquitectónico -->
+                    <div class="bg-white p-4 p-md-5 border border-dark border-opacity-10 mb-5">
+                        <h3 class="h5 fw-bold text-navy text-uppercase mb-3" style="letter-spacing: 0.12em;">Descripción de la Suite</h3>
+                        <p id="roomDescriptionText" class="text-muted mb-4 leading-relaxed" style="font-size: 0.96rem; line-height: 1.8;">
+                            La Suite Ciprés es un refugio de serenidad absoluta. Diseñada bajo un concepto de sofisticación sobria, combina materiales nobles, pisos atérmicos y grandes ventanales con vista abierta a la vegetación de Chacras de Coria.
+                        </p>
+
+                        <div class="row g-3 pt-3 border-top">
+                            <div class="col-sm-6">
+                                <div class="room-highlight-box h-100">
+                                    <i class="fa-solid fa-bed text-gold fs-4"></i>
+                                    <div>
+                                        <small class="text-muted d-block text-uppercase" style="font-size: 0.7rem;">Configuración de Camas</small>
+                                        <strong id="roomBedDetail" class="text-navy small">1 Cama King o 2 Twins</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="room-highlight-box h-100">
+                                    <i class="fa-solid fa-users text-gold fs-4"></i>
+                                    <div>
+                                        <small class="text-muted d-block text-uppercase" style="font-size: 0.7rem;">Capacidad Máxima</small>
+                                        <strong id="roomCapacityDetail" class="text-navy small">Hasta 2 Huéspedes</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="room-highlight-box h-100">
+                                    <i class="fa-solid fa-ruler-combined text-gold fs-4"></i>
+                                    <div>
+                                        <small class="text-muted d-block text-uppercase" style="font-size: 0.7rem;">Superficie</small>
+                                        <strong id="roomSizeDetail" class="text-navy small">32 m² Privados</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="room-highlight-box h-100">
+                                    <i class="fa-solid fa-tree text-gold fs-4"></i>
+                                    <div>
+                                        <small class="text-muted d-block text-uppercase" style="font-size: 0.7rem;">Vistas</small>
+                                        <strong id="roomViewDetail" class="text-navy small">Vista al Parque y Piscina</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicios & Comodidades Incluidas -->
+                    <div class="bg-white p-4 p-md-5 border border-dark border-opacity-10 mb-5">
+                        <h3 class="h5 fw-bold text-navy text-uppercase mb-4" style="letter-spacing: 0.12em;">Servicios Incluidos en tu Estadía</h3>
+                        <div class="row g-3">
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-mug-hot text-gold fs-5"></i>
+                                <span class="small text-muted">Desayuno buffet artesanal incluido</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-water-ladder text-gold fs-5"></i>
+                                <span class="small text-muted">Piscina al aire libre & solarium</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-wifi text-gold fs-5"></i>
+                                <span class="small text-muted">Wi-Fi de alta velocidad (100 Mbps)</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-square-parking text-gold fs-5"></i>
+                                <span class="small text-muted">Estacionamiento privado gratuito</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-snowflake text-gold fs-5"></i>
+                                <span class="small text-muted">Aire acondicionado silencioso frío/calor</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-bath text-gold fs-5"></i>
+                                <span class="small text-muted">Baño privado con ducha & amenities</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-tv text-gold fs-5"></i>
+                                <span class="small text-muted">Smart TV con streaming & caja fuerte</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-wine-glass text-gold fs-5"></i>
+                                <span class="small text-muted">Asesoría personalizada de bodegas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horarios y Políticas -->
+                    <div class="bg-white p-4 p-md-5 border border-dark border-opacity-10 mb-5">
+                        <h3 class="h5 fw-bold text-navy text-uppercase mb-3" style="letter-spacing: 0.12em;">Políticas de la Posada</h3>
+                        <div class="row g-3 small text-muted">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-clock text-gold"></i>
+                                    <strong class="text-navy">Check-in:</strong> 14:00 a 22:00 hs
+                                </div>
+                                <p class="mb-0">Recepción coordinada y atención personalizada.</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-clock-rotate-left text-gold"></i>
+                                    <strong class="text-navy">Check-out:</strong> Hasta las 11:00 hs
+                                </div>
+                                <p class="mb-0">Late check-out sujeto a disponibilidad previa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cambiar de habitación selector rápido -->
+                    <div class="border border-dark border-opacity-10 p-4 bg-white">
+                        <span class="small text-muted text-uppercase fw-semibold d-block mb-3" style="letter-spacing: 0.1em;">Explorar otras opciones</span>
+                        <div class="d-flex flex-wrap gap-2" id="otherRoomsPills">
+                            <!-- Inyectado por JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta de Fechas, Resumen y Checkout -->
+                <div class="col-lg-5">
+                    <div class="card booking-checkout-box p-4 p-md-5 sticky-top" style="top: 95px; z-index: 10;">
+                        <h3 class="h5 fw-bold text-navy text-uppercase mb-4 pb-2 border-bottom" style="letter-spacing: 0.12em;">Tu Reserva Online</h3>
+
+                        <!-- Formulario de Selección de Fechas -->
+                        <form id="roomReservationForm" onsubmit="handleStartPayment(event)">
+                            <div class="row g-3 mb-4">
+                                <div class="col-6">
+                                    <label class="form-label small text-uppercase fw-semibold mb-1">Check-in</label>
+                                    <input type="date" id="bookingCheckIn" class="form-control" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label small text-uppercase fw-semibold mb-1">Check-out</label>
+                                    <input type="date" id="bookingCheckOut" class="form-control" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-uppercase fw-semibold mb-1">Huéspedes</label>
+                                    <select id="bookingGuests" class="form-select">
+                                        <option value="1">1 Huésped</option>
+                                        <option value="2" selected>2 Huéspedes (Pareja / Twins)</option>
+                                        <option value="3">3 Huéspedes</option>
+                                        <option value="4">4 Huéspedes (Familia)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Desglose de Precios -->
+                            <div class="p-3 bg-stone-surface mb-4 border border-dark border-opacity-10">
+                                <div class="d-flex justify-content-between small text-muted mb-2">
+                                    <span>Tarifa por noche:</span>
+                                    <span id="summaryRatePerNight">$125.000 ARS</span>
+                                </div>
+                                <div class="d-flex justify-content-between small text-muted mb-2">
+                                    <span>Estadía (<span id="summaryNights">2</span> noches):</span>
+                                    <span id="summarySubtotal">$250.000 ARS</span>
+                                </div>
+                                <div class="d-flex justify-content-between small text-muted mb-2">
+                                    <span>Desayuno Buffet:</span>
+                                    <span class="text-success fw-semibold">Incluido ($0)</span>
+                                </div>
+                                <div class="d-flex justify-content-between small text-muted mb-3 pb-2 border-bottom">
+                                    <span>Estacionamiento & Wi-Fi:</span>
+                                    <span class="text-success fw-semibold">Incluido ($0)</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-baseline">
+                                    <span class="fw-bold text-navy text-uppercase" style="letter-spacing: 0.08em;">Total Final:</span>
+                                    <span id="summaryTotal" class="fs-4 fw-bold text-navy">$250.000 ARS</span>
+                                </div>
+                                <div class="text-end mt-1">
+                                    <small id="summaryInstallmentHint" class="text-muted" style="font-size: 0.78rem;">o hasta 3 cuotas fijas con tarjeta</small>
+                                </div>
+                            </div>
+
+                            <!-- Datos del Huésped -->
+                            <div class="mb-4">
+                                <h4 class="small fw-bold text-navy text-uppercase mb-3" style="letter-spacing: 0.1em;">Datos del Huésped Principal</h4>
+                                <div class="row g-2">
+                                    <div class="col-12">
+                                        <input type="text" id="guestName" class="form-control form-control-sm" placeholder="Nombre y Apellido *" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="email" id="guestEmail" class="form-control form-control-sm" placeholder="Correo electrónico *" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="tel" id="guestPhone" class="form-control form-control-sm" placeholder="WhatsApp / Teléfono *" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="guestDni" class="form-control form-control-sm" placeholder="DNI / Pasaporte *" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="guestNotes" class="form-control form-control-sm" rows="2" placeholder="Peticiones especiales (ej. cama King o Twins, horario estimado de llegada)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón de Pago con Mercado Pago -->
+                            <button type="submit" class="btn btn-mp-checkout w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Pagar y Confirmar con Mercado Pago</span>
+                            </button>
+
+                            <!-- Garantías -->
+                            <div class="text-center mt-3">
+                                <div class="d-inline-flex align-items-center gap-2 text-muted" style="font-size: 0.76rem;">
+                                    <i class="fa-solid fa-lock text-success"></i>
+                                    <span>Checkout seguro SSL 256-bit • Confirmación instantánea</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="mt-auto py-4 bg-botanical-dark text-white text-center border-top border-white border-opacity-10">
+        <div class="container">
+            <small class="text-white-50">© 2026 Posada Casa Lopez • Medrano 2715, Chacras de Coria, Mendoza • Reservas directas y atención exclusiva.</small>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/5492615077635?text=Hola%20Posada%20Casa%20Lopez!%20Quisiera%20consultar%20disponibilidad." class="float btn-whatsapp" target="_blank" rel="noopener" title="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp my-float"></i>
+    </a>
+
+    <!-- ==============================================================
+         MODAL DE CHECKOUT MERCADO PAGO (SIMULACIÓN OFICIAL)
+         ============================================================== -->
+    <div class="modal fade modal-mp" id="mpCheckoutModal" tabindex="-1" aria-labelledby="mpModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
+            <div class="modal-content">
+
+                <!-- Header Modal MP -->
+                <div class="modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-handshake-simple fs-4"></i>
+                        <div>
+                            <h5 class="modal-title fw-bold fs-6 mb-0" id="mpModalLabel">Mercado Pago Checkout</h5>
+                            <small class="opacity-75" style="font-size: 0.72rem;">Pasarela oficial segura</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Body Modal MP -->
+                <div class="modal-body p-4">
+
+                    <!-- Pantalla 1: Formulario de Pago -->
+                    <div id="mpStepForm">
+                        <div class="p-3 bg-light rounded mb-4 d-flex justify-content-between align-items-center">
+                            <div>
+                                <small class="text-muted text-uppercase d-block" style="font-size: 0.7rem;">Pagas a Posada Casa Lopez</small>
+                                <strong id="mpModalRoomName" class="text-dark small">Suite Ciprés (2 noches)</strong>
+                            </div>
+                            <div class="text-end">
+                                <span id="mpModalTotalAmount" class="fs-4 fw-bold text-primary">$250.000</span>
+                                <small class="d-block text-muted" style="font-size: 0.7rem;">ARS</small>
+                            </div>
+                        </div>
+
+                        <!-- Selector de Método -->
+                        <div class="mb-4 mp-method-selector">
+                            <label class="form-label small text-muted text-uppercase fw-semibold mb-2">Seleccioná cómo querés pagar</label>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <input type="radio" class="btn-check" name="mpMethod" id="methodCard" value="card" checked onchange="toggleMpMethod('card')">
+                                    <label class="btn btn-outline-mp w-100 p-3 text-start h-100" for="methodCard">
+                                        <i class="fa-regular fa-credit-card d-block fs-5 mb-1 text-primary"></i>
+                                        <span class="d-block small fw-bold">Tarjeta</span>
+                                        <small class="text-muted" style="font-size: 0.7rem;">Crédito o Débito</small>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="radio" class="btn-check" name="mpMethod" id="methodAccount" value="account" onchange="toggleMpMethod('account')">
+                                    <label class="btn btn-outline-mp w-100 p-3 text-start h-100" for="methodAccount">
+                                        <i class="fa-solid fa-wallet d-block fs-5 mb-1 text-primary"></i>
+                                        <span class="d-block small fw-bold">Mercado Pago</span>
+                                        <small class="text-muted" style="font-size: 0.7rem;">Saldo o QR</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bloque Tarjeta de Crédito/Débito -->
+                        <div id="mpCardBlock">
+                            <div class="mb-3">
+                                <label class="form-label small text-muted text-uppercase fw-semibold mb-1">Número de Tarjeta</label>
+                                <div class="input-group">
+                                    <input type="text" id="mpCardNumber" class="form-control mp-input" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCardNumber(this)">
+                                    <span class="input-group-text bg-white border-start-0" id="cardBrandIcon">
+                                        <i class="fa-regular fa-credit-card text-muted"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small text-muted text-uppercase fw-semibold mb-1">Nombre y Apellido del Titular</label>
+                                <input type="text" id="mpCardHolder" class="form-control mp-input" placeholder="Como figura en la tarjeta">
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-semibold mb-1">Vencimiento</label>
+                                    <input type="text" id="mpCardExpiry" class="form-control mp-input" placeholder="MM/AA" maxlength="5" oninput="formatExpiry(this)">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-semibold mb-1">Código Seg. (CVV)</label>
+                                    <input type="password" id="mpCardCvv" class="form-control mp-input" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small text-muted text-uppercase fw-semibold mb-1">DNI del Titular</label>
+                                <input type="text" id="mpCardDni" class="form-control mp-input" placeholder="Documento Nacional de Identidad">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label small text-muted text-uppercase fw-semibold mb-1">Plan de Cuotas</label>
+                                <select id="mpInstallmentSelect" class="form-select mp-input">
+                                    <!-- Inyectado dinámicamente según el total -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Bloque Saldo Mercado Pago -->
+                        <div id="mpAccountBlock" class="d-none mb-4">
+                            <div class="p-3 border rounded text-center bg-light">
+                                <i class="fa-solid fa-circle-check text-success fs-2 mb-2"></i>
+                                <h6 class="fw-bold mb-1">Tu cuenta de Mercado Pago está vinculada</h6>
+                                <p class="text-muted small mb-3">Saldo disponible suficiente para concretar la operación en 1 pago con acreditación instantánea.</p>
+                                <span class="badge-mp-secure">Operación con respaldo Mercado Pago</span>
+                            </div>
+                        </div>
+
+                        <!-- Botón Confirmar Pago -->
+                        <button type="button" class="btn btn-mp-checkout w-100 py-3" onclick="processPayment()">
+                            <i class="fa-solid fa-lock me-2"></i>
+                            <span id="btnPayText">Confirmar y Pagar</span>
+                        </button>
+                    </div>
+
+                    <!-- Pantalla 2: Procesando Pago (Spinner) -->
+                    <div id="mpStepProcessing" class="d-none text-center py-5">
+                        <div class="spinner-border text-primary mb-3" style="width: 3.5rem; height: 3.5rem;" role="status">
+                            <span class="visually-hidden">Procesando...</span>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Procesando pago con Mercado Pago</h5>
+                        <p class="text-muted small mb-0">Verificando fondos y emitiendo confirmación de reserva oficial...</p>
+                    </div>
+
+                    <!-- Pantalla 3: Pago Aprobado / Éxito -->
+                    <div id="mpStepSuccess" class="d-none text-center py-4">
+                        <div class="mx-auto mb-3 text-success">
+                            <i class="fa-solid fa-circle-check" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-1">¡Pago Aprobado y Reserva Confirmada!</h4>
+                        <p class="text-muted small mb-4">Tu estadía en Posada Casa Lopez ha quedado garantizada.</p>
+
+                        <div class="bg-light p-3 rounded text-start mb-4 border">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-muted">Código de Reserva:</span>
+                                <strong id="resBookingCode" class="text-primary">#CL-8429-MP</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-muted">Titular:</span>
+                                <strong id="resGuestName" class="text-dark">Juan Pérez</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-muted">Habitación:</span>
+                                <strong id="resRoomName" class="text-dark">Suite Ciprés</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-muted">Fechas:</span>
+                                <strong id="resDates" class="text-dark">23/09/2026 - 25/09/2026</strong>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2 border-top">
+                                <span class="small fw-bold text-dark">Total Abonado:</span>
+                                <strong id="resTotalPaid" class="text-success">$250.000 ARS</strong>
+                            </div>
+                        </div>
+
+                        <!-- Botón WhatsApp Directo para Notificar a la Posada -->
+                        <a id="btnSendWaConfirmation" href="#" target="_blank" rel="noopener" class="btn btn-success w-100 py-3 mb-2 d-flex align-items-center justify-content-center gap-2 fw-semibold">
+                            <i class="fa-brands fa-whatsapp fs-5"></i>
+                            <span>Enviar Comprobante por WhatsApp a la Posada</span>
+                        </a>
+
+                        <a href="index.html" class="btn btn-outline-dark w-100 py-2 small text-uppercase" style="letter-spacing: 0.1em;">
+                            Volver al Inicio
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Footer Modal MP -->
+                <div class="modal-footer bg-light py-2 px-4 justify-content-between">
+                    <small class="text-muted" style="font-size: 0.72rem;">Mercado Pago Pasarela Segura</small>
+                    <div class="d-flex gap-2">
+                        <i class="fa-brands fa-cc-visa text-muted fs-5"></i>
+                        <i class="fa-brands fa-cc-mastercard text-muted fs-5"></i>
+                        <i class="fa-brands fa-cc-amex text-muted fs-5"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Script del Motor de Reservas y Mercado Pago -->
+    <script>
+        // 1. BASE DE DATOS DE LAS 9 HABITACIONES REALES
+        const ROOMS = {
+            'cipres': {
+                name: 'Suite Ciprés',
+                badge: 'King o 2 Twins',
+                tagline: 'Calma absoluta con vista directa al parque centenario',
+                price: 125000,
+                maxGuests: 2,
+                size: '32 m²',
+                bed: '1 Cama King Size matrimonial (o 2 Sommiers Twins)',
+                view: 'Vista directa al parque y piscina',
+                desc: 'La Suite Ciprés es un refugio de serenidad absoluta. Diseñada bajo un concepto de sofisticación sobria, combina materiales nobles, pisos atérmicos y grandes ventanales con vista abierta a la vegetación de Chacras de Coria. Su configuración flexible permite disfrutar de una generosa cama King Size o dos sommiers individuales de alta densidad.',
+                img: 'assets/img/rooms/cypres.jpg',
+                gallery: [
+                    'assets/img/rooms/cypres.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-pano.jpg',
+                    'assets/img/rooms/posada-main.jpg'
+                ]
+            },
+            'ombu': {
+                name: 'Suite Ombú',
+                badge: 'Hasta 3 Huéspedes',
+                tagline: 'Espacio y confort para parejas o grupos reducidos',
+                price: 145000,
+                maxGuests: 3,
+                size: '38 m²',
+                bed: '1 Cama King Size + 1 Sommier Individual',
+                view: 'Vista al jardín interior',
+                desc: 'Amplia, luminosa y versátil, la Suite Ombú ofrece una cómoda distribución para hasta tres huéspedes. Cuenta con una cama matrimonial King Size y un sommier individual adicional, ideal para una escapada familiar o de amigos en el corazón de la ruta del vino mendocina.',
+                img: 'assets/img/rooms/ombu.jpg',
+                gallery: [
+                    'assets/img/rooms/ombu.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-main.jpg',
+                    'assets/img/rooms/posada-pano.jpg'
+                ]
+            },
+            'alamo': {
+                name: 'Suite Álamo',
+                badge: 'Queen Matrimonial',
+                tagline: 'Nuestra suite más romántica e íntima',
+                price: 120000,
+                maxGuests: 2,
+                size: '30 m²',
+                bed: '1 Cama Queen Size Matrimonial',
+                view: 'Vista a la galería tradicional y viñas',
+                desc: 'La Suite Álamo es la opción predilecta de parejas en viaje de bodas o escapadas de fin de semana. Su atmósfera cálida con detalles en madera y lino natural crea una experiencia acogedora con salida directa a la galería exterior.',
+                img: 'assets/img/rooms/alamo.jpg',
+                gallery: [
+                    'assets/img/rooms/alamo.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-pano.jpg',
+                    'assets/img/rooms/posada-main.jpg'
+                ]
+            },
+            'damasco': {
+                name: 'Habitación Damasco',
+                badge: 'King o 2 Twins',
+                tagline: 'Cálidos tonos terrosos y ventilación natural',
+                price: 115000,
+                maxGuests: 2,
+                size: '28 m²',
+                bed: '1 Cama King Size (o 2 Sommiers Twins)',
+                view: 'Vista a patios internos y arboleda',
+                desc: 'Inspirada en los frutales de la quinta original de Casa Lopez, la Habitación Damasco combina tonos terracota y blanco puro. Posee excelente iluminación natural, baño completo de diseño y aislamiento acústico para un descanso ininterrumpido.',
+                img: 'assets/img/rooms/damasco.jpg',
+                gallery: [
+                    'assets/img/rooms/damasco.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-main.jpg',
+                    'assets/img/rooms/posada-pano.jpg'
+                ]
+            },
+            'datil': {
+                name: 'Habitación Dátil',
+                badge: 'King o 2 Twins',
+                tagline: 'Luminosidad matutina y tranquilidad sonora',
+                price: 118000,
+                maxGuests: 2,
+                size: '29 m²',
+                bed: '1 Cama King Size (o 2 Sommiers Twins)',
+                view: 'Vista al patio colonial y jardines',
+                desc: 'Una habitación fresca y luminosa con orientación este que recibe la suave luz del amanecer mendocino. Equipada con sommiers hoteleros de primera línea y escritorio de lectura.',
+                img: 'assets/img/rooms/datil.jpg',
+                gallery: [
+                    'assets/img/rooms/datil.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-pano.jpg',
+                    'assets/img/rooms/posada-main.jpg'
+                ]
+            },
+            'sauce': {
+                name: 'Suite Sauce',
+                badge: 'King o 2 Twins',
+                tagline: 'Inmediata cercanía a la galería para disfrutar al aire libre',
+                price: 128000,
+                maxGuests: 2,
+                size: '34 m²',
+                bed: '1 Cama King Size (o 2 Sommiers Twins)',
+                view: 'Vista a los sauces añosos y parque',
+                desc: 'La Suite Sauce conjuga la nobleza de la arquitectura colonial con comodidades contemporáneas. Su cercanía inmediata a la galería permite relajarse en los sillones exteriores tras un día de recorrido por bodegas.',
+                img: 'assets/img/rooms/sauce.jpg',
+                gallery: [
+                    'assets/img/rooms/sauce.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-main.jpg',
+                    'assets/img/rooms/posada-pano.jpg'
+                ]
+            },
+            'tamarindo': {
+                name: 'Departamento Tamarindo',
+                badge: '2 Dormitorios (Hasta 4 Pax)',
+                tagline: 'Unidad residencial de 2 ambientes para familias',
+                price: 185000,
+                maxGuests: 4,
+                size: '52 m²',
+                bed: 'Dormitorio 1: Cama Queen | Dormitorio 2: 2 Sommiers Twins',
+                view: 'Vista panorámica al parque y piscina',
+                desc: 'El Departamento Tamarindo es la opción más amplia de la posada. Con dos dormitorios independientes, permite disfrutar de privacidad y comodidad absoluta para familias o grupos de hasta 4 personas.',
+                img: 'assets/img/rooms/tamarindo.jpg',
+                gallery: [
+                    'assets/img/rooms/tamarindo.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-pano.jpg',
+                    'assets/img/rooms/posada-main.jpg'
+                ]
+            },
+            'nogal': {
+                name: 'Habitación Nogal',
+                badge: 'King o 2 Twins',
+                tagline: 'Silencio profundo y entorno verde reparador',
+                price: 115000,
+                maxGuests: 2,
+                size: '28 m²',
+                bed: '1 Cama King Size (o 2 Sommiers Twins)',
+                view: 'Vista al jardín posterior y nogales',
+                desc: 'Ubicada en el sector más calmo de la posada, la Habitación Nogal ofrece una experiencia de desconexión y descanso total, con delicados detalles en nogal lustrado y textiles naturales.',
+                img: 'assets/img/rooms/nogal.jpg',
+                gallery: [
+                    'assets/img/rooms/nogal.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-main.jpg',
+                    'assets/img/rooms/posada-pano.jpg'
+                ]
+            },
+            'ceibo': {
+                name: 'Suite Ceibo',
+                badge: 'King o 2 Twins',
+                tagline: 'Salida directa al parque, solarium y piscina',
+                price: 130000,
+                maxGuests: 2,
+                size: '35 m²',
+                bed: '1 Cama King Size (o 2 Sommiers Twins)',
+                view: 'Acceso directo a solarium y piscina',
+                desc: 'La Suite Ceibo destaca por su ubicación estratégica con salida directa a la piscina y al solarium. Decorada con elementos de diseño local y textiles de abrigo, es una de las unidades más solicitadas en temporada de verano.',
+                img: 'assets/img/rooms/ceibo.jpg',
+                gallery: [
+                    'assets/img/rooms/ceibo.jpg',
+                    'assets/img/rooms/posada-garden.jpg',
+                    'assets/img/rooms/posada-pano.jpg',
+                    'assets/img/rooms/posada-main.jpg'
+                ]
+            }
+        };
+
+        // Formateador de moneda en ARS
+        const formatARS = (amount) => {
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                maximumFractionDigits: 0
+            }).format(amount);
+        };
+
+        let currentRoomId = 'cipres';
+        let currentCalculatedTotal = 0;
+        let currentNights = 1;
+
+        // 2. INICIALIZACIÓN
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomIdParam = urlParams.get('id');
+            const checkInParam = urlParams.get('checkin');
+            const checkOutParam = urlParams.get('checkout');
+            const guestsParam = urlParams.get('guests');
+
+            if (roomIdParam && ROOMS[roomIdParam]) {
+                currentRoomId = roomIdParam;
+            }
+
+            // Inicializar fechas
+            const today = new Date();
+            const afterTomorrow = new Date();
+            afterTomorrow.setDate(today.getDate() + 2);
+
+            const formatDate = (date) => {
+                const y = date.getFullYear();
+                const m = String(date.getMonth() + 1).padStart(2, '0');
+                const d = String(date.getDate()).padStart(2, '0');
+                return `${y}-${m}-${d}`;
+            };
+
+            const inInput = document.getElementById('bookingCheckIn');
+            const outInput = document.getElementById('bookingCheckOut');
+            const guestsSelect = document.getElementById('bookingGuests');
+
+            inInput.min = formatDate(today);
+            outInput.min = formatDate(today);
+
+            inInput.value = checkInParam && checkInParam >= formatDate(today) ? checkInParam : formatDate(today);
+            outInput.value = checkOutParam && checkOutParam > inInput.value ? checkOutParam : formatDate(afterTomorrow);
+
+            if (guestsParam) {
+                const guestNum = guestsParam.replace(/\D/g, '') || '2';
+                guestsSelect.value = guestNum <= '4' ? guestNum : '2';
+            }
+
+            // Listeners de cambio de fechas
+            inInput.addEventListener('change', function () {
+                if (inInput.value >= outInput.value) {
+                    const newOut = new Date(inInput.value);
+                    newOut.setDate(newOut.getDate() + 1);
+                    outInput.value = formatDate(newOut);
+                }
+                recalculateBooking();
+            });
+
+            outInput.addEventListener('change', function () {
+                if (outInput.value <= inInput.value) {
+                    const newIn = new Date(outInput.value);
+                    newIn.setDate(newIn.getDate() - 1);
+                    inInput.value = formatDate(newIn);
+                }
+                recalculateBooking();
+            });
+
+            guestsSelect.addEventListener('change', recalculateBooking);
+
+            // Cargar datos de la habitación
+            loadRoom(currentRoomId);
+            buildOtherRoomsPills();
+        });
+
+        // 3. CARGAR DATOS DE LA HABITACIÓN EN LA PANTALLA
+        function loadRoom(id) {
+            currentRoomId = id;
+            const room = ROOMS[id] || ROOMS['cipres'];
+
+            document.title = `${room.name} • Posada Casa Lopez`;
+            document.getElementById('roomTitle').textContent = room.name;
+            document.getElementById('roomTagline').textContent = room.tagline;
+            document.getElementById('roomBadgePill').textContent = room.badge;
+            document.getElementById('roomPriceHeader').textContent = formatARS(room.price);
+            document.getElementById('roomDescriptionText').textContent = room.desc;
+            document.getElementById('roomBedDetail').textContent = room.bed;
+            document.getElementById('roomCapacityDetail').textContent = `Hasta ${room.maxGuests} Huéspedes`;
+            document.getElementById('roomSizeDetail').textContent = `${room.size} Privados`;
+            document.getElementById('roomViewDetail').textContent = room.view;
+
+            // Galería de imágenes
+            const mainImg = document.getElementById('roomMainPhoto');
+            mainImg.src = room.img;
+            mainImg.alt = room.name;
+
+            const thumbsContainer = document.getElementById('roomThumbnailsContainer');
+            thumbsContainer.innerHTML = '';
+            room.gallery.forEach((photoUrl, idx) => {
+                const col = document.createElement('div');
+                col.className = 'col-3';
+                col.innerHTML = `
+                    <img src="${photoUrl}" class="room-thumb-item ${idx === 0 ? 'active' : ''}" alt="Miniatura ${idx + 1}" onclick="switchMainPhoto('${photoUrl}', this)">
+                `;
+                thumbsContainer.appendChild(col);
+            });
+
+            // Actualizar selector de huéspedes máximo permitido
+            const guestsSelect = document.getElementById('bookingGuests');
+            Array.from(guestsSelect.options).forEach(opt => {
+                const val = parseInt(opt.value);
+                opt.disabled = val > room.maxGuests;
+            });
+            if (parseInt(guestsSelect.value) > room.maxGuests) {
+                guestsSelect.value = String(room.maxGuests);
+            }
+
+            recalculateBooking();
+        }
+
+        // 4. CAMBIO DE FOTO PRINCIPAL
+        function switchMainPhoto(src, el) {
+            const mainImg = document.getElementById('roomMainPhoto');
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 150);
+
+            document.querySelectorAll('.room-thumb-item').forEach(thumb => thumb.classList.remove('active'));
+            if (el) el.classList.add('active');
+        }
+
+        // 5. RECÁLCULO DINÁMICO DE NOCHES Y TOTAL
+        function recalculateBooking() {
+            const room = ROOMS[currentRoomId] || ROOMS['cipres'];
+            const inDate = new Date(document.getElementById('bookingCheckIn').value);
+            const outDate = new Date(document.getElementById('bookingCheckOut').value);
+
+            let diffTime = outDate.getTime() - inDate.getTime();
+            let nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if (nights <= 0) nights = 1;
+            currentNights = nights;
+
+            const subtotal = room.price * nights;
+            currentCalculatedTotal = subtotal;
+
+            document.getElementById('summaryRatePerNight').textContent = `${formatARS(room.price)} ARS`;
+            document.getElementById('summaryNights').textContent = nights;
+            document.getElementById('summarySubtotal').textContent = `${formatARS(subtotal)} ARS`;
+            document.getElementById('summaryTotal').textContent = `${formatARS(subtotal)} ARS`;
+
+            const cuota3 = Math.round((subtotal * 1.12) / 3);
+            document.getElementById('summaryInstallmentHint').textContent = `o 3 cuotas fijas de ${formatARS(cuota3)}`;
+        }
+
+        // 6. PILLS DE OTRAS HABITACIONES
+        function buildOtherRoomsPills() {
+            const container = document.getElementById('otherRoomsPills');
+            container.innerHTML = '';
+
+            Object.keys(ROOMS).forEach(key => {
+                const r = ROOMS[key];
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `btn btn-sm ${key === currentRoomId ? 'btn-dark' : 'btn-outline-secondary'}`;
+                btn.style.fontSize = '0.75rem';
+                btn.style.letterSpacing = '0.08em';
+                btn.textContent = r.name;
+                btn.onclick = () => {
+                    const checkIn = document.getElementById('bookingCheckIn').value;
+                    const checkOut = document.getElementById('bookingCheckOut').value;
+                    const guests = document.getElementById('bookingGuests').value;
+                    history.pushState(null, '', `habitacion.html?id=${key}&checkin=${checkIn}&checkout=${checkOut}&guests=${guests}`);
+                    loadRoom(key);
+                    buildOtherRoomsPills();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // 7. INICIAR CHECKOUT MERCADO PAGO (ABRIR MODAL)
+        function handleStartPayment(event) {
+            event.preventDefault();
+
+            const guestName = document.getElementById('guestName').value.trim();
+            const guestEmail = document.getElementById('guestEmail').value.trim();
+            const guestPhone = document.getElementById('guestPhone').value.trim();
+            const guestDni = document.getElementById('guestDni').value.trim();
+
+            if (!guestName || !guestEmail || !guestPhone || !guestDni) {
+                alert('Por favor complete todos los datos del huésped para continuar.');
+                return;
+            }
+
+            const room = ROOMS[currentRoomId] || ROOMS['cipres'];
+
+            document.getElementById('mpModalRoomName').textContent = `${room.name} (${currentNights} ${currentNights === 1 ? 'noche' : 'noches'})`;
+            document.getElementById('mpModalTotalAmount').textContent = formatARS(currentCalculatedTotal);
+            document.getElementById('btnPayText').textContent = `Pagar ${formatARS(currentCalculatedTotal)} con Mercado Pago`;
+
+            document.getElementById('mpCardHolder').value = guestName.toUpperCase();
+            document.getElementById('mpCardDni').value = guestDni;
+
+            const selectCuotas = document.getElementById('mpInstallmentSelect');
+            const total = currentCalculatedTotal;
+            const c1 = total;
+            const c3 = Math.round((total * 1.12) / 3);
+            const c6 = Math.round((total * 1.22) / 6);
+
+            selectCuotas.innerHTML = `
+                <option value="1">1 cuota de ${formatARS(c1)} (Sin interés)</option>
+                <option value="3">3 cuotas fijas de ${formatARS(c3)} (CFT: 12.0%)</option>
+                <option value="6">6 cuotas fijas de ${formatARS(c6)} (CFT: 22.0%)</option>
+            `;
+
+            document.getElementById('mpStepForm').classList.remove('d-none');
+            document.getElementById('mpStepProcessing').classList.add('d-none');
+            document.getElementById('mpStepSuccess').classList.add('d-none');
+
+            const modal = new bootstrap.Modal(document.getElementById('mpCheckoutModal'));
+            modal.show();
+        }
+
+        // 8. ALTERNAR MÉTODO EN MODAL (Tarjeta vs Cuenta MP)
+        function toggleMpMethod(method) {
+            const cardBlock = document.getElementById('mpCardBlock');
+            const accountBlock = document.getElementById('mpAccountBlock');
+            const btnPayText = document.getElementById('btnPayText');
+
+            if (method === 'card') {
+                cardBlock.classList.remove('d-none');
+                accountBlock.classList.add('d-none');
+                btnPayText.textContent = `Pagar ${formatARS(currentCalculatedTotal)} con Tarjeta`;
+            } else {
+                cardBlock.classList.add('d-none');
+                accountBlock.classList.remove('d-none');
+                btnPayText.textContent = `Pagar ${formatARS(currentCalculatedTotal)} con Saldo MP`;
+            }
+        }
+
+        // 9. FORMATEO DE TARJETA Y DETECCIÓN DE EMISOR
+        function formatCardNumber(input) {
+            let val = input.value.replace(/\D/g, '');
+            let formatted = val.match(/.{1,4}/g)?.join(' ') || '';
+            input.value = formatted;
+
+            const iconSpan = document.getElementById('cardBrandIcon');
+            if (val.startsWith('4')) {
+                iconSpan.innerHTML = '<i class="fa-brands fa-cc-visa text-primary fs-5"></i>';
+            } else if (val.startsWith('5')) {
+                iconSpan.innerHTML = '<i class="fa-brands fa-cc-mastercard text-warning fs-5"></i>';
+            } else if (val.startsWith('3')) {
+                iconSpan.innerHTML = '<i class="fa-brands fa-cc-amex text-info fs-5"></i>';
+            } else {
+                iconSpan.innerHTML = '<i class="fa-regular fa-credit-card text-muted"></i>';
+            }
+        }
+
+        function formatExpiry(input) {
+            let val = input.value.replace(/\D/g, '');
+            if (val.length >= 2) {
+                input.value = val.substring(0, 2) + '/' + val.substring(2, 4);
+            } else {
+                input.value = val;
+            }
+        }
+
+        // 10. SIMULAR PROCESAMIENTO Y APROBACIÓN DE MERCADO PAGO
+        function processPayment() {
+            document.getElementById('mpStepForm').classList.add('d-none');
+            document.getElementById('mpStepProcessing').classList.remove('d-none');
+
+            setTimeout(() => {
+                const room = ROOMS[currentRoomId] || ROOMS['cipres'];
+                const guestName = document.getElementById('guestName').value.trim();
+                const checkIn = document.getElementById('bookingCheckIn').value;
+                const checkOut = document.getElementById('bookingCheckOut').value;
+                const guests = document.getElementById('bookingGuests').value;
+
+                const randomNum = Math.floor(1000 + Math.random() * 9000);
+                const bookingCode = `CL-2026-${randomNum}`;
+
+                document.getElementById('resBookingCode').textContent = bookingCode;
+                document.getElementById('resGuestName').textContent = guestName;
+                document.getElementById('resRoomName').textContent = room.name;
+                document.getElementById('resDates').textContent = `${checkIn} al ${checkOut} (${currentNights} noches)`;
+                document.getElementById('resTotalPaid').textContent = `${formatARS(currentCalculatedTotal)} ARS`;
+
+                const waMessage = `¡Hola Posada Casa Lopez! Acabo de abonar y confirmar mi reserva online:%0A%0A` +
+                    `• *Código de Reserva:* ${bookingCode}%0A` +
+                    `• *Titular:* ${guestName}%0A` +
+                    `• *Habitación:* ${room.name}%0A` +
+                    `• *Fechas:* ${checkIn} al ${checkOut} (${currentNights} noches)%0A` +
+                    `• *Huéspedes:* ${guests}%0A` +
+                    `• *Total Abonado:* ${formatARS(currentCalculatedTotal)} (Mercado Pago)%0A%0A` +
+                    `Adjunto mis datos para la coordinación de la llegada. ¡Muchas gracias!`;
+
+                const waUrl = `https://wa.me/5492615077635?text=${waMessage}`;
+                document.getElementById('btnSendWaConfirmation').href = waUrl;
+
+                document.getElementById('mpStepProcessing').classList.add('d-none');
+                document.getElementById('mpStepSuccess').classList.remove('d-none');
+            }, 2200);
+        }
+    </script>
+</body>
+</html>
