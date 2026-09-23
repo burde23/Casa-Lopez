@@ -147,20 +147,25 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
 }
 
 #header .navbar {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 #header .navbar-brand {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin-top: -10px !important;
-    margin-bottom: -10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
 #header .brand-text-logo {
-    max-height: 68px !important;
+    height: 72px !important;
+    max-height: 72px !important;
     width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
 }
 
 /* Logo en header scrolleado sobre verde: blanco nítido */
@@ -832,7 +837,7 @@ section {
    ========================================================================== */
 .room-detail-header {
     background: var(--clb-botanical-dark);
-    padding: 0.65rem 0;
+    padding: 0.25rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
