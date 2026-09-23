@@ -732,7 +732,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     z-index: 2;
 }
 
-/* Gradiente Botánico Profundo (Verde del Header #18231C) */
+/* Gradiente Botánico Profundo Bidireccional (Verde del Header #18231C arriba y abajo) */
 .hero-crillon-overlay {
     position: absolute;
     top: 0;
@@ -741,9 +741,12 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     height: 100%;
     background: linear-gradient(
         180deg,
-        rgba(24, 35, 28, 0.55) 0%,
-        rgba(24, 35, 28, 0.12) 38%,
-        rgba(24, 35, 28, 0.45) 70%,
+        #18231C 0%,
+        rgba(24, 35, 28, 0.85) 12%,
+        rgba(24, 35, 28, 0.45) 28%,
+        rgba(24, 35, 28, 0.12) 42%,
+        rgba(24, 35, 28, 0.12) 58%,
+        rgba(24, 35, 28, 0.45) 72%,
         rgba(24, 35, 28, 0.85) 88%,
         #18231C 100%
     );
@@ -1332,15 +1335,15 @@ section {
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
     #hero {
-        height: 72vh !important;
-        min-height: 480px !important;
-        max-height: 580px !important;
+        height: 82vh !important;
+        min-height: 560px !important;
+        max-height: 660px !important;
     }
     .hero-scroll-indicator {
         display: none !important;
     }
     .hero-main-logo {
-        max-height: 235px;
+        max-height: 245px;
     }
     .hero-sub-subtitle {
         font-size: 0.76rem;
@@ -1357,12 +1360,12 @@ section {
 
 @media (max-width: 575.98px) {
     #hero {
-        height: 66vh !important;
-        min-height: 430px !important;
-        max-height: 510px !important;
+        height: 78vh !important;
+        min-height: 520px !important;
+        max-height: 600px !important;
     }
     .hero-main-logo {
-        max-height: 185px;
+        max-height: 195px;
     }
     .hero-sub-subtitle {
         font-size: 0.68rem;
