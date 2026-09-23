@@ -5,7 +5,7 @@
    olivares centenarios y piedra andina de Chacras de Coria, Mendoza.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
 :root {
     /* Paleta Naturaleza de Lujo */
@@ -1330,6 +1330,44 @@ section {
 
 .footer-crillon a:hover {
     color: var(--clb-gold-accent) !important;
+}
+
+/* ==========================================================================
+   FIRMA DEVELOPER BURDEV (IDÉNTICA A DOWNTOWN LAS MORENAS)
+   ========================================================================== */
+.burdev-signature {
+    font-family: 'Jost', sans-serif !important;
+}
+
+.burdev-signature span,
+.burdev-signature .burdev-label {
+    font-family: 'Jost', sans-serif !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1 !important;
+}
+
+.burdev-signature a {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.burdev-signature img,
+.burdev-signature .burdev-img {
+    height: 13px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    vertical-align: middle !important;
+    margin-left: 2px !important;
+    display: inline-block !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.burdev-signature a:hover img,
+.burdev-signature a:hover .burdev-img {
+    opacity: 1 !important;
+    transform: translateY(-1px) !important;
 }
 
 /* Responsive adjustments */
