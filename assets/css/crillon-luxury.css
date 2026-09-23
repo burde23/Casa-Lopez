@@ -550,28 +550,37 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
    Fondo verde oscuro botánico #18231C, letras blancas y botón cerrar blanco
    ========================================================================== */
 @media (max-width: 1199.98px) {
-    /* Header Móvil Más Largo (Mayor presencia vertical y altura elegante) */
+    /* Header Móvil: Ajustado y pegado al alto exacto del logo */
     #header .header-navbar,
     #header .navbar {
-        min-height: 98px !important;
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
+        min-height: auto !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #header .navbar-brand {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        line-height: 0 !important;
     }
 
     #header .brand-text-logo {
-        height: 86px !important;
-        max-height: 86px !important;
+        height: 72px !important;
+        max-height: 72px !important;
     }
 
     .room-detail-header {
-        min-height: 98px !important;
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
+        min-height: auto !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
+    .room-detail-header .room-header-logo,
     .room-detail-header img {
-        height: 86px !important;
-        max-height: 86px !important;
+        height: 72px !important;
+        max-height: 72px !important;
     }
 
     #header:not(.header-scrolled) .navbar-brand {
@@ -1347,25 +1356,6 @@ section {
 }
 
 @media (max-width: 575.98px) {
-    #header .header-navbar,
-    #header .navbar {
-        min-height: 94px !important;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-    }
-    #header .brand-text-logo {
-        height: 82px !important;
-        max-height: 82px !important;
-    }
-    .room-detail-header {
-        min-height: 94px !important;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-    }
-    .room-detail-header img {
-        height: 82px !important;
-        max-height: 82px !important;
-    }
     #hero {
         height: 66vh !important;
         min-height: 430px !important;
