@@ -723,7 +723,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     z-index: 2;
 }
 
-/* Gradiente Botánico Profundo & Piedra */
+/* Gradiente Botánico Profundo (Verde del Header #18231C) */
 .hero-crillon-overlay {
     position: absolute;
     top: 0;
@@ -733,9 +733,10 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     background: linear-gradient(
         180deg,
         rgba(24, 35, 28, 0.55) 0%,
-        rgba(24, 35, 28, 0.15) 45%,
-        rgba(24, 35, 28, 0.55) 85%,
-        rgba(248, 247, 244, 1) 100%
+        rgba(24, 35, 28, 0.12) 38%,
+        rgba(24, 35, 28, 0.45) 70%,
+        rgba(24, 35, 28, 0.85) 88%,
+        #18231C 100%
     );
     z-index: 3;
 }
@@ -805,7 +806,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
-    color: var(--clb-text-navy);
+    color: #FFFFFF !important;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -815,18 +816,19 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     letter-spacing: 0.24rem;
     text-transform: uppercase;
     opacity: 0.85;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, color 0.3s;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-scroll-indicator:hover {
     opacity: 1;
-    color: var(--clb-primary);
+    color: var(--clb-gold-accent) !important;
 }
 
 .hero-scroll-icon {
     width: 20px;
     height: 32px;
-    border: 1px solid var(--clb-text-navy);
+    border: 1px solid rgba(255, 255, 255, 0.75) !important;
     position: relative;
 }
 
@@ -838,7 +840,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     transform: translateX(-50%);
     width: 2px;
     height: 6px;
-    background-color: var(--clb-text-navy);
+    background-color: #FFFFFF !important;
     animation: scrollWheel 2s infinite ease-in-out;
 }
 
