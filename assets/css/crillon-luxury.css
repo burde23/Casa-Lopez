@@ -112,6 +112,11 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     border: none !important;
 }
 
+#header {
+    z-index: 1050 !important;
+    overflow: visible !important;
+}
+
 #header .header-navbar,
 #header .navbar,
 #header .container-fluid {
@@ -121,6 +126,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     box-shadow: none !important;
     height: auto !important;
     min-height: auto !important;
+    overflow: visible !important;
 }
 
 /* En el hero (sin scroll): el brand se oculta para que SOLO se vean los botones y navlinks */
@@ -134,9 +140,24 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
 /* Al scrollear: Aparece en verde botánico de lujo */
 #header.header-scrolled {
     background: var(--clb-botanical-dark) !important;
-    backdrop-filter: blur(14px) !important;
+    background-color: #18231C !important;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Solo en desktop usamos backdrop-filter para no crear containing block que rompa el offcanvas móvil */
+@media (min-width: 1200px) {
+    #header.header-scrolled {
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    #header.header-scrolled {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
 }
 
 #header.header-scrolled .navbar-brand {
@@ -178,9 +199,9 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
    Sin caja contenedora: Solo ícono de mundo + ES / EN / PT
    ========================================================================== */
 .lang-dropdown {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
 .btn-lang-clean {
@@ -191,11 +212,11 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     box-shadow: none !important;
     color: #FFFFFF !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.76rem !important;
+    font-size: 0.78rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.14em !important;
     text-transform: uppercase !important;
-    padding: 2px 4px !important;
+    padding: 4px 6px !important;
     cursor: pointer !important;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
     transition: color 0.25s ease, opacity 0.25s ease;
@@ -212,7 +233,7 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
 
 .btn-lang-clean .lang-globe {
     color: #D4AF37 !important;
-    font-size: 0.88rem !important;
+    font-size: 0.9rem !important;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
 }
@@ -241,18 +262,37 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     text-shadow: none !important;
 }
 
-/* Dropdown Menu de Idiomas de Lujo */
+/* Dropdown Menu de Idiomas de Lujo: Posicionamiento Explícito e Infalible */
 .lang-dropdown-menu {
-    background: rgba(18, 26, 21, 0.97) !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    right: auto !important;
+    display: none !important;
+    background: #121A15 !important;
+    background: rgba(18, 26, 21, 0.98) !important;
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(14px) !important;
-    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border: 1px solid rgba(212, 175, 55, 0.45) !important;
     border-radius: 0 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
-    min-width: 145px !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75) !important;
+    min-width: 155px !important;
     padding: 6px 0 !important;
-    margin-top: 8px !important;
-    z-index: 1060 !important;
+    margin: 0 !important;
+    z-index: 999999 !important;
+    transform: none !important;
+    list-style: none !important;
+}
+
+.lang-dropdown-menu.dropdown-menu-end {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.lang-dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .lang-dropdown-menu .dropdown-item {
@@ -261,27 +301,37 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
     font-weight: 500 !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    padding: 8px 16px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    padding: 9px 18px !important;
     background: transparent !important;
     border: none !important;
     width: 100%;
     text-align: left;
     transition: all 0.2s ease !important;
     cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .lang-dropdown-menu .dropdown-item:hover,
 .lang-dropdown-menu .dropdown-item:focus {
-    background: rgba(212, 175, 55, 0.16) !important;
+    background: rgba(212, 175, 55, 0.18) !important;
     color: #D4AF37 !important;
-    padding-left: 20px !important;
+    padding-left: 22px !important;
 }
 
 .lang-dropdown-menu .dropdown-item.active {
-    background: rgba(212, 175, 55, 0.22) !important;
+    background: rgba(212, 175, 55, 0.25) !important;
     color: #D4AF37 !important;
     font-weight: 700 !important;
+}
+
+.lang-dropdown-menu .dropdown-item.active::after {
+    content: "✓";
+    font-size: 0.8rem;
+    color: #D4AF37;
+    margin-left: 8px;
 }
 
 /* ==========================================================================
@@ -505,12 +555,28 @@ h1, h2, h3, h4, .h-special-font, .serif-font {
         pointer-events: none !important;
     }
 
-    .offcanvas-navbar {
-        background-color: #18231C !important;
-        color: #FFFFFF !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-        max-width: 320px !important;
+    .offcanvas-navbar,
+    #offcanvasNavbar {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
         width: 85% !important;
+        max-width: 320px !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-height: 100vh !important;
+        max-height: 100dvh !important;
+        z-index: 1065 !important;
+        background-color: #18231C !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .offcanvas-backdrop {
+        z-index: 1040 !important;
     }
 
     .offcanvas-navbar .offcanvas-header {

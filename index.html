@@ -55,7 +55,7 @@
                     <!-- Selector de Idioma (Desktop Izquierda en Hero / Móvil) -->
                     <div class="lang-switch-desktop-left align-items-center me-3 me-xl-4">
                         <div class="dropdown lang-dropdown d-inline-flex align-items-center">
-                            <button class="btn btn-lang-clean dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleccionar idioma">
+                            <button class="btn btn-lang-clean dropdown-toggle" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
                                 <i class="fa-solid fa-globe lang-globe"></i>
                                 <span class="active-lang-text">ES</span>
                             </button>
@@ -85,7 +85,7 @@
                             </a>
                             <div class="d-flex align-items-center gap-3">
                                 <div class="dropdown lang-dropdown d-inline-flex align-items-center">
-                                    <button class="btn btn-lang-clean dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleccionar idioma">
+                                    <button class="btn btn-lang-clean dropdown-toggle" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
                                         <i class="fa-solid fa-globe lang-globe"></i>
                                         <span class="active-lang-text">ES</span>
                                     </button>
@@ -125,7 +125,7 @@
                                 <!-- Selector de Idioma (Desktop Derecha al hacer Scroll) -->
                                 <div class="lang-switch-desktop-right align-items-center me-1">
                                     <div class="dropdown lang-dropdown d-inline-flex align-items-center">
-                                        <button class="btn btn-lang-clean dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Seleccionar idioma">
+                                        <button class="btn btn-lang-clean dropdown-toggle" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
                                             <i class="fa-solid fa-globe lang-globe"></i>
                                             <span class="active-lang-text">ES</span>
                                         </button>
@@ -916,6 +916,19 @@
                     header.classList.remove('header-scrolled');
                 }
             });
+
+            // Cerrar menú offcanvas en mobile al pulsar cualquier enlace de sección
+            const offcanvasEl = document.getElementById('offcanvasNavbar');
+            if (offcanvasEl) {
+                offcanvasEl.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                            const inst = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
+                            if (inst) inst.hide();
+                        }
+                    });
+                });
+            }
 
             // 3. SET DEFAULT DATES IN INQUIRY FORM (Hoy + 2 días)
             const checkInInput = document.getElementById('inputCheckIn');
