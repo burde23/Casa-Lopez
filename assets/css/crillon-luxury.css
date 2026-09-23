@@ -1057,28 +1057,49 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
-    .section-title {
-        font-size: 2.1rem;
+    #hero {
+        height: 60vh !important;
+        min-height: 420px !important;
+        max-height: 520px !important;
+    }
+    .hero-scroll-indicator {
+        display: none !important;
     }
     .hero-main-logo {
-        max-height: 250px;
+        max-height: 220px;
     }
     .hero-sub-subtitle {
-        font-size: 0.78rem;
-        letter-spacing: 0.24rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.22rem;
+        margin-top: 1rem;
     }
     .check-room-top {
-        margin-top: 15px;
+        margin-top: -30px !important;
+    }
+    .section-title {
+        font-size: 2.1rem;
     }
 }
 
 @media (max-width: 575.98px) {
+    #hero {
+        height: 55vh !important;
+        min-height: 350px !important;
+        max-height: 430px !important;
+    }
     .hero-main-logo {
-        max-height: 200px;
+        max-height: 170px;
     }
     .hero-sub-subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 0.18rem;
+        font-size: 0.66rem;
+        letter-spacing: 0.16rem;
+        margin-top: 0.75rem;
+    }
+    .check-room-top {
+        margin-top: -25px !important;
+    }
+    .booking-luxury-card {
+        padding: 1.25rem 1rem !important;
     }
     .section-title {
         font-size: 1.85rem;
